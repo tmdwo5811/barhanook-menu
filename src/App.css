@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'LT Museum';
-  src: url('../public/font/LTMuseum-Bold.ttf') format('truetype');
+  font-family: "LT Museum";
+  src: url("../public/font/LTMuseum-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Campton L';
-  src: url('../public/font/Campton-LightDEMO\ 2.otf') format('opentype');
+  font-family: "Campton L";
+  src: url("../public/font/Campton-LightDEMO\ 2.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -20,19 +20,21 @@
 */
 
 body {
-  font-family: 'Campton L', sans-serif;
+  font-family: "Campton L", sans-serif;
+  color: #27221e;
 }
 
 .header-font {
-  font-family: 'LT Museum';
+  font-family: "LT Museum";
 }
 
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-header {
-  color: #27221E;
+  color: #27221e;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -41,47 +43,64 @@ body {
   font-size: calc(10px + 2vmin);
 }
 
-.category-nav {
-  border: #61dafb;
-  background-color: #27221E;
-  color: #fff;
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
+.category-nav::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
 
-.category-nav > ul {
+.category-nav {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
   gap: 30px; /*네비게이션 간격*/
+  white-space: nowrap;
+  align-items: center;
+  background-color: #27221e;
+  color: #fff;
+  padding: 16px;
+  font-weight: bold;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
 }
 
 .category-nav > ul > li {
   cursor: pointer;
+  text-align: center;
 }
 
 .menu-container {
   padding: 40px;
 }
 
-.App-logo {
-  width: 90%;
-  pointer-events: none;
+.category-text {
+  position: relative;
+  font-family: Serif;
+  border-bottom: 1px solid rgb(210, 210, 210);
+  display: flex;
+  padding-bottom: 6px;
+  margin-bottom: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.category-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(210, 210, 210);
+  top: calc(100% + 5px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu-items {
+  border: 1px solid orange;
+  display: flex;
+  flex-flow: column;
+  gap: 40px;
+  border-top: 1px dashed rgb(210, 210, 210);
 }
 
+.menu-item {
+  border: 1px solid darkblue;
+}
