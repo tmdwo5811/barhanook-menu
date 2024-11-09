@@ -1,27 +1,75 @@
+@font-face {
+  font-family: 'LT Museum';
+  src: url('../public/font/LTMuseum-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Campton L';
+  src: url('../public/font/Campton-LightDEMO\ 2.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 
+@font-face {
+  font-family: 'Campton B';
+  src: url('../public/font/Campton-BoldDEMO\ 2.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+} 
+*/
+
+body {
+  font-family: 'Campton L', sans-serif;
+}
+
+.header-font {
+  font-family: 'LT Museum';
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  color: #27221E;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.category-nav {
+  border: #61dafb;
+  background-color: #27221E;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.category-nav > ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 30px; /*네비게이션 간격*/
+}
+
+.category-nav > ul > li {
+  cursor: pointer;
+}
+
+.menu-container {
+  padding: 40px;
+}
+
+.App-logo {
+  width: 90%;
+  pointer-events: none;
 }
 
 .App-link {
@@ -36,3 +84,4 @@
     transform: rotate(360deg);
   }
 }
+
