@@ -22,6 +22,7 @@
 body {
   font-family: "Campton L", sans-serif;
   color: #27221e;
+  border: 1px solid red;
 }
 
 .header-font {
