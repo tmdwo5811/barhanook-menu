@@ -22,7 +22,6 @@
 body {
   font-family: "Campton L", sans-serif;
   color: #27221e;
-  border: 1px solid red;
 }
 
 .header-font {
@@ -58,7 +57,7 @@ body {
   white-space: nowrap;
   align-items: center;
   background-color: #27221e;
-  color: #fff;
+  color: #d9d8d8;
   padding: 16px;
   font-weight: bold;
   overflow-x: auto;
@@ -66,9 +65,17 @@ body {
   max-width: 100%;
 }
 
-.category-nav > ul > li {
+.category-nav>li {
   cursor: pointer;
   text-align: center;
+}
+.category-nav>li:hover {
+  color: #fff;
+}
+/* 메뉴 선택시 스타일 */
+.category-nav>li .selected {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .menu-container {
