@@ -115,3 +115,21 @@ body {
 .menu-item {
   border: 1px solid darkblue;
 }
+
+table {
+  border-spacing: 0 13px;
+}
+
+.category-name {
+  /* padding-bottom: 10px; */
+  border: 1px solid red;
+}
+
+.category-name th:first-child {
+  width: 57%;
+  text-align: left;
+}
+
+.menu-text td:first-child {
+  text-align: left;
+}

@@ -43,16 +43,36 @@ function CategoryNav({ categories, onCategoryClick }) {
 }
 
 function MenuItems({ items }) {
+  const category = ["Name", "Glass", "Bottle"];
+  
   return (
     <div className="menu-items">
-      {items.map((item) => (
+      {/* {items.map((item) => (
         <div className="menu-item" key={item.name}>
           <img src={item.image} alt={item.name} />
           <h3>{item.name}</h3>
           <p>{item.glass}</p>
           <p>{item.bottle}</p>
         </div>
-      ))}
+      ))} */}
+      <table>
+        <thead className="category-name">
+          <tr>
+            {category.map((name) => (
+              <th key={name.name}>{name}</th>
+            ))}
+          </tr>
+        </thead>
+          <tbody>
+            {items.map((item) => (
+              <tr key={item.name} className="menu-text">
+                <td>{item.name}</td>
+                <td>{item.glass}</td>
+                <td>{item.bottle}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
     </div>
   );
 }
