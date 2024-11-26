@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import wiskydata from "./data/menuData.json";
+import wiskydata from "./data/data.json";
 import "./App.css";
 import Link from 'react-router-dom';
 
@@ -49,9 +49,8 @@ function MenuItems({ items }) {
         <div className="menu-item" key={item.name}>
           <img src={item.image} alt={item.name} />
           <h3>{item.name}</h3>
-          <p>{item.price}</p>
-          <p>{item.description}</p>
-          <p>{item.description_en}</p>
+          <p>{item.glass}</p>
+          <p>{item.bottle}</p>
         </div>
       ))}
     </div>
