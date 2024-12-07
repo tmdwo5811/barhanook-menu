@@ -45,7 +45,7 @@ function CategoryNav({ categories, onCategoryClick }) {
 
 function MenuItems({ items }) {
   console.log(items)
-  const fieldNames = ["Name", "Glass", "Bottle", "Country"];
+  const fieldNames = ["Name", "Glass(30ml)", "Bottle", "Country"];
 
   return (
     <div className="menu-wrapper">
@@ -63,7 +63,6 @@ function MenuItems({ items }) {
             <tbody>
               {item.detailItems.map((detailItems, subIndex) => (
                 <tr key={`detail-${index}-${subIndex}`} className="menu-text">
-                  {/* console.log(1, detailItems, `detail-${index}-${subIndex}`) */}
                   <td>{detailItems.enName}</td>
                   <td>{detailItems.pricePerGlass}</td>
                   <td>{detailItems.pricePerBottle}</td>

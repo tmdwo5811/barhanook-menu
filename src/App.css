@@ -32,7 +32,7 @@ body {
 
 .App {
   text-align: center;
-  overflow: hidden;
+  position: relative;
 }
 
 .App-header {
@@ -43,13 +43,15 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(16px + 2vmin);
-  padding: 5px;
+  padding: 3px;
+  margin: 3px;
 }
 
 .navi-wrapper {
   height: auto;
-  overflow-x: auto;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .category-nav {
@@ -64,10 +66,9 @@ body {
   color: #d9d8d8;
   padding: 16px 0;
   font-weight: bold;
+  overflow-x: auto;
   width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  max-width: 100%;
 }
 
 .category-nav::-webkit-scrollbar {
@@ -116,17 +117,21 @@ body {
   display: flex;
   flex-flow: column;
   gap: 40px;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* 터치 디바이스에서 부드럽게 스크롤 */
 }
 
 .sub-category {
   margin: 10px 0;
   text-align: left;
-  font-size: 20px;
 }
 
 /* 테이블 스타일 */
 .category-table {
   border-collapse: collapse;
+  width: 100%;
 }
 
 .category-name {
@@ -134,14 +139,29 @@ body {
   border-bottom: 2px solid #27221e;
 }
 
+/* 첫번째 컬럼 고정 스타일 */
+/* .category-table th:first-child,
+td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 10px;
+  background-color: #fff;
+} */
+
 .category-name th {
-  padding: 13px 0;
+  padding: 13px;
   font-size: 18px;
 }
 
 .category-name th:first-child {
   width: 57%;
   text-align: left;
+}
+
+.category-name th:first-child,
+th:last-child {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .menu-text td:first-child {
