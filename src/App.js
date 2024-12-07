@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import wiskydata from "./data/data.json";
 import "./App.css";
-import Link from 'react-router-dom';
 
 function App() {
   const data = wiskydata;
