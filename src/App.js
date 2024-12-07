@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import wiskydata from "./data/data.json";
+import wiskydata from "./data/data_v2.json";
 import "./App.css";
 
 function App() {
@@ -43,35 +43,32 @@ function CategoryNav({ categories, onCategoryClick }) {
 
 function MenuItems({ items }) {
   const category = ["Name", "Glass", "Bottle"];
-  
+
   return (
     <div className="menu-items">
-      {/* {items.map((item) => (
-        <div className="menu-item" key={item.name}>
-          <img src={item.image} alt={item.name} />
-          <h3>{item.name}</h3>
-          <p>{item.glass}</p>
-          <p>{item.bottle}</p>
-        </div>
-      ))} */}
-      <table>
+      <table className="category-table">
         <thead className="category-name">
           <tr>
-            {category.map((name) => (
-              <th key={name.name}>{name}</th>
+            {category.map((subCategory) => (
+              <th key={subCategory.subCategory}>{subCategory}</th>
             ))}
           </tr>
         </thead>
-          <tbody>
-            {items.map((item) => (
-              <tr key={item.name} className="menu-text">
-                <td>{item.name}</td>
-                <td>{item.glass}</td>
-                <td>{item.bottle}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <tbody>
+          {items.map((item) => (
+            <tr key={item.subCategory} className="menu-text">
+              {item.map((detailItems) => (
+                <>
+                  <td>{detailItems.enName}</td>
+                  <td>{detailItems.pricePerGlass}</td>
+                  <td>{detailItems.pricePerBottle}</td>
+                  <td>{detailItems.country}</td>
+                </>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

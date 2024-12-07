@@ -104,19 +104,18 @@ body {
   top: calc(100% + 5px);
 }
 
+/* 메뉴 리스트 */
 .menu-items {
-  border: 1px solid orange;
   display: flex;
   flex-flow: column;
   gap: 40px;
   border-top: 1px dashed rgb(210, 210, 210);
 }
 
-.menu-item {
-  border: 1px solid darkblue;
-}
 
-table {
+/* 테이블 스타일 */
+.category-table {
+  border-collapse: collapse;
   border-spacing: 0 13px;
 }
 
