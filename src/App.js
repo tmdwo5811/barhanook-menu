@@ -42,34 +42,37 @@ function CategoryNav({ categories, onCategoryClick }) {
 }
 
 function MenuItems({ items }) {
-  const category = ["Name", "Glass", "Bottle"];
+  console.log(items)
+  const category = ["Name", "Glass", "Bottle", "Country"];
 
   return (
     <div className="menu-items">
-      <table className="category-table">
-        <thead className="category-name">
-          <tr>
-            {category.map((subCategory) => (
-              <th key={subCategory.subCategory}>{subCategory}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((item) => (
-            <tr key={item.subCategory} className="menu-text">
-              {item.map((detailItems) => (
-                <>
+      {items.map((item, index) => (
+        <React.Fragment key={`fragment-${index}`}>
+          <h3>{item.subCategory}</h3>
+          <table key={`item-${index}`} className="category-table">
+            <thead className="category-name">
+              <tr>
+                {category.map((category) => (
+                  <th key={category}>{category}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {item.detailItems.map((detailItems, subIndex) => (
+                <tr key={`detail-${index}-${subIndex}`} className="menu-text">
+                  {/* console.log(1, detailItems, `detail-${index}-${subIndex}`) */}
                   <td>{detailItems.enName}</td>
                   <td>{detailItems.pricePerGlass}</td>
                   <td>{detailItems.pricePerBottle}</td>
                   <td>{detailItems.country}</td>
-                </>
+                </tr>
               ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+            </tbody>
+          </table >
+        </React.Fragment>
+      ))}
+    </div >
   );
 }
 export default App;
