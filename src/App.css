@@ -4,12 +4,14 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Campton L";
   src: url("../public/font/Campton-LightDEMO\ 2.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
+
 /* 
 @font-face {
   font-family: 'Campton B';
@@ -53,17 +55,17 @@ body {
   list-style: none;
   margin: 0;
   /* gap: 0px; */
-    /*네비게이션 간격*/
+  /*네비게이션 간격*/
   white-space: nowrap;
   align-items: center;
   background-color: #27221e;
   color: #d9d8d8;
   padding: 16px 0;
-    /* padding: 16px; */
   font-weight: bold;
   overflow-x: auto;
   width: 100%;
   max-width: 100%;
+  position: sticky;
 }
 
 .category-nav>li {
@@ -71,27 +73,26 @@ body {
   text-align: center;
   margin: 0 26px;
 }
+
 .category-nav>li:hover {
-  color: #fff;
-}
-/* 메뉴 선택시 스타일 */
-.category-nav>li .selected {
   color: #fff;
 }
 
 .menu-container {
   padding: 30px;
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .category-text {
   position: relative;
-  font-family: Serif;
+  /* font-family: 'Times New Roman', Serif; */
+  font-family: 'LT Museum';
   border-bottom: 1px solid rgb(210, 210, 210);
   display: flex;
   padding-bottom: 6px;
   margin-bottom: 40px;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .category-text::after {
@@ -105,23 +106,30 @@ body {
 }
 
 /* 메뉴 리스트 */
-.menu-items {
+.menu-wrapper {
   display: flex;
   flex-flow: column;
   gap: 40px;
-  border-top: 1px dashed rgb(210, 210, 210);
 }
 
+.sub-category {
+  margin: 10px 0;
+  text-align: left;
+}
 
 /* 테이블 스타일 */
 .category-table {
   border-collapse: collapse;
-  border-spacing: 0 13px;
 }
 
 .category-name {
-  /* padding-bottom: 10px; */
-  border: 1px solid red;
+  border-top: 1px dashed rgb(210, 210, 210);
+  border-bottom: 2px solid #27221e;
+}
+
+.category-name th {
+  padding: 13px 0;
+  font-size: 18px;
 }
 
 .category-name th:first-child {
@@ -131,4 +139,12 @@ body {
 
 .menu-text td:first-child {
   text-align: left;
+}
+
+.menu-text {
+  font-size: 18px;
+}
+
+.menu-text td {
+  padding: 13px 0;
 }

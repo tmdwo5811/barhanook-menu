@@ -37,11 +37,29 @@
             "pricePerBottle": 200000
           }
         ]
+      },
+      {
+        "subCategory": "버번 위스키 - 서브 카테고리",
+        "detailItems": [
+          {
+            "enName": "버번 Black label",
+            "koName": "버번 조니워커 블랙 라벨",
+            "country": "미국",
+            "pricePerGlass": 6000,
+            "pricePerBottle": 15900
+          },
+          {
+            "enName": "버번 Balentain",
+            "koName": "버번 발렌타인 12년",
+            "pricePerGlass": 6000,
+            "pricePerBottle": 200000
+          }
+        ]
       }
     ]
   },
   {
-    "category": "데킬라",
+    "category": "Tequila",
     "items": [      {
       "subCategory": "메즈칼 - 서브 카테고리",
       "detailItems": [

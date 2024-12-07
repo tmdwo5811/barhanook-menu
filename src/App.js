@@ -43,18 +43,18 @@ function CategoryNav({ categories, onCategoryClick }) {
 
 function MenuItems({ items }) {
   console.log(items)
-  const category = ["Name", "Glass", "Bottle", "Country"];
+  const fieldNames = ["Name", "Glass", "Bottle", "Country"];
 
   return (
-    <div className="menu-items">
+    <div className="menu-wrapper">
       {items.map((item, index) => (
-        <React.Fragment key={`fragment-${index}`}>
-          <h3>{item.subCategory}</h3>
+        <div key={`fragment-${index}`}>
+          <h4 className="sub-category">{item.subCategory}</h4>
           <table key={`item-${index}`} className="category-table">
             <thead className="category-name">
               <tr>
-                {category.map((category) => (
-                  <th key={category}>{category}</th>
+                {fieldNames.map((name) => (
+                  <th key={name}>{name}</th>
                 ))}
               </tr>
             </thead>
@@ -70,7 +70,7 @@ function MenuItems({ items }) {
               ))}
             </tbody>
           </table >
-        </React.Fragment>
+        </div>
       ))}
     </div >
   );
