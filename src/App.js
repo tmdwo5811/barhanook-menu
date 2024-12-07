@@ -3,7 +3,7 @@ import wiskydata from "./data/data_v2.json";
 import "./App.css";
 
 function App() {
-  const data = wiskydata;
+  const data = wiskydata.result;
 
   const [selectedCategory, setSelectedCategory] = useState(data[0].category);
   const [items, setItems] = useState(data[0].items);
@@ -17,7 +17,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header header-font">HANOOK's Menu</header>
-      <CategoryNav categories={data} onCategoryClick={handleCategoryClick} />
+      <div className="navi-wrapper">
+        <CategoryNav categories={data} onCategoryClick={handleCategoryClick} />
+      </div>
       <div className="menu-container">
         <h1 className="category-text">{selectedCategory}</h1>
         <MenuItems items={items} />
@@ -49,7 +51,7 @@ function MenuItems({ items }) {
     <div className="menu-wrapper">
       {items.map((item, index) => (
         <div key={`fragment-${index}`}>
-          <h4 className="sub-category">{item.subCategory}</h4>
+          <h5 className="sub-category">{item.subCategory}</h5>
           <table key={`item-${index}`} className="category-table">
             <thead className="category-name">
               <tr>
