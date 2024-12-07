@@ -44,7 +44,6 @@ function CategoryNav({ categories, onCategoryClick }) {
 }
 
 function MenuItems({ items }) {
-  console.log(items)
   const fieldNames = ["Name", "Glass(30ml)", "Bottle", "Country"];
 
   return (
